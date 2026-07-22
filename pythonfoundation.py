@@ -37,9 +37,21 @@ def unliharflar(matn):
         if i in ['a','u','i','o','e',"o'"]:
             result+=1
     return result
-a = input("So'zni kiriting: ")
-print(f"Unli harflar: {unliharflar(a)}")
+# a = input("So'zni kiriting: ")
+# print(f"Unli harflar: {unliharflar(a)}")
 
 
+def number(number):
+    for i in range(0, number):
+        if i%3 == 0:
+            print(f'{i} Fizz')
+        elif i%5 == 0:
+            print(f'{i} Buzz')
+        elif i%3 == 0 and i%5 == 0:
+            print(f'{i} Fizzbuzz')
+        else:
+            print(i)
 
+a = int(input("Son kirit: "))
+print(number(a))
 

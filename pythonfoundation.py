@@ -21,5 +21,25 @@ def ispallindromnumber(number):
         return True
     else:
         return False
-a = int(input("Sonni kiriting: "))
-print(ispallindromnumber(a))
+    
+def maxdigit(number):
+    result = 0
+    while number:
+        i = number%10
+        number //=10
+        if i>result:
+            result = i
+    return result
+
+def unliharflar(matn):
+    result = 0
+    for i in matn:
+        if i in ['a','u','i','o','e',"o'"]:
+            result+=1
+    return result
+a = input("So'zni kiriting: ")
+print(f"Unli harflar: {unliharflar(a)}")
+
+
+
+

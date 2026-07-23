@@ -33,5 +33,13 @@ def longwords(string:str):
             res = len(i)
             word = i
     return {word:res}
-a = input('Sonlarni kiriting: ')
-print(longwords(a))
+
+def indexright(array:list, k:int):
+    for i in range(0,len(array)):
+        array[i] = array[i-k]
+        # if i+k>len(array)-1:
+        #     array[i] = 
+    return array
+a = list(map(int,input('Sonlarni kiriting: ').split()))
+b = int(input("k ni kiriting: "))
+print(indexright(a,b))

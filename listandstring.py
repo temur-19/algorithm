@@ -42,3 +42,5 @@ def indexright(array:list, k:int):
 a = list(map(int,input('Sonlarni kiriting: ').split()))
 b = int(input("k ni kiriting: "))
 print(indexright(a,b))
+with open("algoritmlash.py", "w", encoding="utf-8") as file:
+    file.write("start algoritm")

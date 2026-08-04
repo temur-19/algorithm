@@ -37,6 +37,20 @@ def sumtagret(nums:list, target:int):
         i+=1
     return result
 
+
+def binarysearch(nums:list, target:int):
+    i = 0
+    j = len(nums)-1
+    while i<=j:
+        med = (i+j)//2
+        if nums[med]==target:
+            return med
+        elif nums[med]>target:
+            j = med-1
+        elif nums[med]<target:
+            i = med+1
+    return -1
+
 a = list(map(int,input("sonlarni kirit: ").split()))
 b = int(input("Son kirit: "))
-print(sumtagret(a,b))
+print(binarysearch(a,b))

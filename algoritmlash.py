@@ -51,6 +51,21 @@ def binarysearch(nums:list, target:int):
             i = med+1
     return -1
 
+
+def firstandend(numbers:list, target:int):
+    result = []
+    i = 0
+    j = len(numbers)-1
+    while numbers[i] != target or numbers[j]!=target:
+        if numbers[i] != target:
+            i+=1
+        if numbers[j] != target:
+            j-=1
+        if i==j:
+            return [-1,-1]
+        result.append([i,j])
+    return result[-1]
+    
 a = list(map(int,input("sonlarni kirit: ").split()))
 b = int(input("Son kirit: "))
-print(binarysearch(a,b))
+print(firstandend(a,b))

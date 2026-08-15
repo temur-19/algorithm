@@ -65,7 +65,30 @@ def firstandend(numbers:list, target:int):
             return [-1,-1]
         result.append([i,j])
     return result[-1]
+
+
+def qavslar(word:str):
+    l1 = list(word)
+    qavslar = {
+               '{':'}',
+               '[':']',
+               '(':')'
+               }
+    i = 0
+    j = len(l1)-1
+    print(l1)
+    while i<=len(l1)//2-1:
+        print(qavslar[l1[i]], l1[j])
+        if str(qavslar[l1[i]]) == l1[j]:
+            i+=1
+            j-=1
+        else:
+            return False
+    return True
+            
     
-a = list(map(int,input("sonlarni kirit: ").split()))
-b = int(input("Son kirit: "))
-print(firstandend(a,b))
+# a = list(map(int,input("sonlarni kirit: ").split()))
+# b = int(input("Son kirit: "))
+a = input('Qavslarni kiriting: ')
+print(qavslar(a))
+

@@ -76,8 +76,7 @@ def qavslar(word:str):
                }
     i = 0
     j = len(l1)-1
-    print(l1)
-    while i<=len(l1)//2-1:
+    while i<=(j+1)//2-1:
         print(qavslar[l1[i]], l1[j])
         if str(qavslar[l1[i]]) == l1[j]:
             i+=1
@@ -89,6 +88,30 @@ def qavslar(word:str):
     
 # a = list(map(int,input("sonlarni kirit: ").split()))
 # b = int(input("Son kirit: "))
-a = input('Qavslarni kiriting: ')
-print(qavslar(a))
+# a = input('Qavslarni kiriting: ')
+# print(qavslar(a))
 
+# import pefile
+# import yara
+
+# PE fayl tahlil qilish
+# pe = pefile.PE('malware.exe')
+# print(f"Machine: {pe.FILE_HEADER.Machine}")
+# print(f"Sections: {[s.Name.decode() for s in pe.sections]}")
+
+# # YARA rules bilan tekshirish
+# rules = yara.compile(filepath='rules.yar')
+# matches = rules.match(filename='suspect.exe')
+# for match in matches:
+#     print(f"[!] Malware topildi: {match.rule}")
+
+import http
+import requests
+from requests.auth import HTTPBasicAuth
+
+url = "https://lms.tuit.uz/auth/login"
+
+response = requests.get(url,auth=HTTPBasicAuth('', ''))
+
+print(response.status_code)
+# print(response.headers)

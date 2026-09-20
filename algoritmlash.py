@@ -108,10 +108,18 @@ def qavslar(word:str):
 import http
 import requests
 from requests.auth import HTTPBasicAuth
+from bs4 import BeautifulSoup
 
-url = "https://lms.tuit.uz/auth/login"
+session = requests.Session()
 
-response = requests.get(url,auth=HTTPBasicAuth('', ''))
+url = "https://example.com"
 
-print(response.status_code)
-# print(response.headers)
+login_data = {
+    'username':'',
+    'password':''
+}
+
+
+
+response = session.post(url, login_data) 
+print(f"Login Status: {response.status_code}")
